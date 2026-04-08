@@ -124,6 +124,12 @@ def open_youtube():
     else:
         logger.warning("  → Не можу открыть YouTube")
 
+def open_translate():
+    if open_application(web_url="https://translate.google.com.ua/?sl=en&tl=uk&op=translate"):
+        logger.info("  → Открываю Переводчик")
+    else:
+        logger.warning("  → Не можу открыть Переводчик")
+
 def open_github():
     if open_application(web_url="https://github.com"):
         logger.info("  → Открываю GitHub")
@@ -243,18 +249,6 @@ def open_cmd():
     else:
         logger.warning("  → CMD не смог запуститься")
 
-def open_obs():
-    success = open_application(
-        windows_path=r"C:\Program Files (x86)\Steam\steamapps\common\OBS Studio\bin\64bit\obs64.exe",
-        macos_app="OBS",
-        linux_cmd="obs",
-        fallback_cmd="obs"
-    )
-    if success:
-        logger.info("  → Открываю OBS Studio")
-    else:
-        logger.warning("  → OBS Studio не найден")
-
 def open_explorer():
     success = open_application(
         windows_path="explorer.exe",
@@ -284,6 +278,7 @@ COMMANDS = [
     Command("google", ["гугл", "гугол", "поиск", "найди", "найти"], open_google),
     Command("classroom", ["классрум", "класрум", "уроки", "урок", "задача", "задачи", "задачу", "домашка", "домашку"], open_classroom),
     Command("youtube", ["ютуб", "ютюб"], open_youtube),
+    Command("translate", ["переводчик", "перевести"], open_translate),
     Command("github", ["гитхаб", "гит", "репозиторий", "профиль", "работа"], open_github),
     Command("gpt", ["искусственный интеллект", "джипити", "джпт", "гепете", "чат гпт", "чатгпт", "чат"], open_gpt),
     Command("steam", ["стим", "стиам", "играть", "игры"], open_steam),
@@ -295,7 +290,6 @@ COMMANDS = [
     Command("calculator", ["калькулятор", "посчитать", "посчитай"], open_calculator),
     Command("notepad", ["блокнот", "заметки", "текст", "написать"], open_notepad),
     Command("cmd", ["командная строка", "виндовс строка"], open_cmd),
-    Command("obs studio", ["записать", "запись", "записать екран"], open_obs),
     Command("explorer", ["проводник", "папки", "папка"], open_explorer),
 ]
 
