@@ -30,11 +30,11 @@ logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "vosk-model-small-ru-0.22")
-SAMPLERATE = 24000
-BLOCKSIZE = 1000
+SAMPLERATE = 26000
+BLOCKSIZE = 1500
 
 # Debounce: не триггеры одну команду частіше ніж кожні N блоків
-DEBOUNCE_BLOCKS = 20
+DEBOUNCE_BLOCKS = 30
 
 # ═══════════════════════════════════════════════════════════════
 #   УТІЛІТИ ДЛЯ КРОССПЛАТФОРМЕННОСТІ
