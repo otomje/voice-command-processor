@@ -270,7 +270,7 @@ class Command:
     name: str
     keywords: list[str]
     action: Callable[[], None]
-    works_when_paused: bool = False  # якщо True — спрацює навіть на паузі
+    works_when_paused: bool = False
 
 COMMANDS = [
     Command("hello", ["привет", "слушай", "здарова", "доров"], say_hello, works_when_paused=True),
@@ -308,7 +308,7 @@ class VoiceAssistant:
         self.current_block = 0
         self.last_triggered = {"keyword": None, "block": 0}
 
-        self.is_listening = True  # True = активне; False = на паузі
+        self.is_listening = True
 
         self.model = None
         self.recognizer = None
