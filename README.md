@@ -1,5 +1,5 @@
 # Voice Command Processor
-The voice command processor is built on python and vosk models. **(Code written by artificial intelligence for personal learning of Python)**
+The voice command processor is built on python and vosk models **(Code written by artificial intelligence for personal learning of Python).**
 
 ## 📚 Project Features
 - Works offline
